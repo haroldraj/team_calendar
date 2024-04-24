@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+/web/node_modules
+/api/node_modules
+
+# logs
+*.log
+
+# runtime data
+.pids
+*.pid
+*.seed
+*.pid.lock
+
+# directories
+/dist
+/tmp
+/out-tsc
+/web/dist
+/api/dist
+
+# IDE - IntelliJ
+.idea
+/web/.idea
+/api/.idea
+
+# environment
+.env
+/web/.env
+/api/.env

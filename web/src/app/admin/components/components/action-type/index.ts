@@ -1,0 +1,1 @@
+export {default as ActionType} from './action-type'

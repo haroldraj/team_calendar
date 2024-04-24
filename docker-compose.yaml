@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: team_calendar
+    networks:
+      - network
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb:/var/lib/mysql
+
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    networks:
+      - network
+
+  web:
+    build:
+      context: web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3002:3002"
+    networks:
+      - network
+    depends_on:
+      - api
+
+volumes:
+    mariadb:
+
+networks:
+    network:
+        driver: bridge

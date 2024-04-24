@@ -1,0 +1,53 @@
+Documentation du Projet TeamCalendar
+
+Introduction
+Le projet TeamCalendar est un logiciel de gestion des actions utilisateurs par jour, offrant une vue par semaine et par mois. Il permet à un administrateur de créer et gérer les utilisateurs ainsi que leurs actions. Le système offre des fonctionnalités avancées telles que la gestion des utilisateurs, des actions, une vue par semaine et par mois, ainsi qu'un système d'authentification sécurisé.
+
+ Fonctionnalités Principales
+1. Gestion des Utilisateurs
+   - CRUD (Création, Lecture, Mise à jour, Suppression) des utilisateurs.
+   - CRUD des types d’action.
+   - Exportation des actions dans différents formats (CSV, PDF, etc.).
+
+2. Gestion des Actions
+   - Ajout, modification et suppression des actions pour une journée donnée par chaque utilisateur.
+   - Classification des actions par catégorie (travail, personnel, etc.).
+   - Définition de rappels pour les actions.
+
+3. Vue par Semaine
+   - Affichage des actions de chaque utilisateur par jour pour toute la semaine.
+   - Navigation facile entre les semaines.
+
+4. Vue par Mois
+   - Affichage des actions de chaque utilisateur par jour pour tout le mois.
+   - Visualisation des mois précédents et suivants.
+
+5. Système d'Authentification
+   - Authentification sécurisée pour les utilisateurs et l'administrateur utilisant JSON Web Tokens (JWT).
+
+ Technologies Utilisées
+- Backend: NestJS
+- Frontend: React
+- Base de Données: MySQL
+- Système d'Authentification: JWT (JSON Web Tokens)
+
+ Schéma de Base de Données
+- Table Utilisateurs: ID, Nom, Adresse Email, Mot de Passe (Hashé)
+- Table Actions: ID, ID Utilisateur (Clé Étrangère faisant référence à la table Utilisateurs), Date
+- Table TypeActions: ID, Nom
+- Table Roles: ID, Nom
+
+Sécurité
+- Les mots de passe des utilisateurs sont stockés de manière sécurisée en utilisant des techniques de hachage.
+- L'authentification se fait à l'aide de JWT pour assurer la sécurité des échanges de données.
+
+Raisons pour l'absence de conteneurisation du Frontend
+Nous tenons à expliquer que nous n'avons pas pu conteneuriser le frontend de notre application pour les raisons suivantes :
+1. Complexité Technique: L'intégration du frontend avec React dans un conteneur Docker a présenté des défis techniques importants. Les dépendances et les configurations nécessaires pour exécuter un environnement React dans un conteneur Docker sont complexes et demandent du temps pour être correctement mises en place.
+
+2. Priorité des Fonctionnalités: Dans le cadre de notre projet, nous avons concentré nos efforts sur le développement des fonctionnalités principales et leur intégration avec le backend, ce qui a nécessité une allocation de ressources prioritaire.
+
+3. Limitations de Temps: En raison de contraintes de temps, nous avons dû prendre la décision de prioriser les tâches essentielles pour assurer le bon fonctionnement de l'application dans le délai imparti. La conteneurisation du frontend aurait requis un investissement de temps supplémentaire que nous n'avions pas à disposition.
+
+Malgré l'absence de conteneurisation du frontend, notre application est fonctionnelle et répond aux exigences spécifiées, offrant une expérience utilisateur fluide et sécurisée.
+
