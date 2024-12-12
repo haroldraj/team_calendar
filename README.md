@@ -1,9 +1,4 @@
 # Team Calendar
-
-## Authors
-#### - Franck Patrick ESSI TSONDO
-#### - Harold Rajaonarison
-
 ## Introduction
 
 Team Calendar is a web application that allows users to create, view, and manage events. The application has two types of users: administrators and regular users. Administrators have the ability to create, view, update, and delete events. Regular users can only view events. The application has a RESTful API that is used to interact with the database. The API is secured using JWT tokens. The application has a web interface that is used to interact with the API.
